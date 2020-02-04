@@ -19,6 +19,12 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@asymmetrik/ngx-leaflet": "^6.0.1",
+    "@ng-bootstrap/ng-bootstrap": "^5.2.1",
+    "angular-highcharts": "^8.0.3",
+    "angular2-highcharts": "^0.5.5",
+    "highcharts": "^8.0.0",
+    "leaflet": "^1.6.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

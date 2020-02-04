@@ -1,0 +1,159 @@
+<nav class="navbar navbar-dark bg-custom fixed-top  flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0">Dashboard</a>
+    <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" (click)="signOut()">Sign out</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <div class="profile-txt">
+                    <div><img src="../../assets/img_avatar2.png" width="60px" class="rounded-circle"></div>
+                    <div>Linda Miller</div>
+                    <div>Frontend Developer</div>
+
+                </div>
+                <ul class="nav flex-column" style="text-align: center;">
+                    <li class="nav-item" *ngFor="let menu of dashboardMenus">
+                        <a class="nav-link" class="row">
+                            <span class="col-3"><i class="fas {{menu.icons}}"></i></span><span>{{menu.name}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 padding-left-right-0">
+            <div class="top-card padding-45">
+                <div class="welcome-txt">Welcome Back, Linda</div>
+                <div class="noti-txt">You have 24 new, Message and 5 New Notifications.</div>
+            </div>
+            <div>
+                <div style="padding: 0% 5%;background-color: #f8f9fa;">
+                    <div class="row">
+                        <div class="card col-6">
+                            <div class="card-titlt-txt">Sales Today</div>
+                            <div class="card-body">
+                                <div [chart]="chart"></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="card col">
+                                    <div class="card-titlt-txt"><span style="width: 88%; display: inline-block;">Total
+                                            Earning</span><i class="fas fa-truck icons-font-style"></i></div>
+                                    <div>
+                                        <h5 class="card-title">$2.56</h5>
+                                        <p class="card-text">Some quick example</p>
+                                    </div>
+                                </div>
+
+                                <div class="card col">
+                                    <div class="card-titlt-txt"> <span
+                                            style="width: 90%; display: inline-block;">Visitor Today</span>
+                                        <i class="fas fa-chart-line icons-font-style"></i></div>
+                                    <div>
+                                        <h5 class="card-title">456</h5>
+                                        <p class="card-text">Some quick example</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card col">
+                                    <div class="card-titlt-txt"> <span
+                                            style="width: 90%; display: inline-block;">Pending Orders</span><i
+                                            class="fas fa-arrow-alt-circle-down icons-font-style"></i></div>
+                                    <div>
+                                        <h5 class="card-title">698</h5>
+                                        <p class="card-text">Some quick example</p>
+                                    </div>
+                                </div>
+
+                                <div class="card col">
+                                    <div class="card-titlt-txt"><span style="width: 90%; display: inline-block;">Recient
+                                            Movement</span><i class="fas fa-chart-line icons-font-style"></i></div>
+                                    <div>
+                                        <h5 class="card-title">458</h5>
+                                        <p class="card-text">Some quick example</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="card col">
+                            <div class="card-titlt-txt">Recient Movement</div>
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.Some quick example text to build on the card title and make up
+                                    the
+                                    bulkSome quick example text to build on the card title and make up the bulkSome
+                                    quick
+                                    example text to build on the card title and make up the bulSome quick example text
+                                    to
+                                    build on the card title and make up the bulkSome quick example text to build on the
+                                    card
+                                    title and make up the bulkk</p>
+                                <a href="#" class="btn btn-primary" (click)="getDataFromService()">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card col-5" style="padding: 0px;">
+                            <div class="card-titlt-txt">Current Visitor</div>
+                            <div>
+                                <div style="height: 440px; width: 605px" leaflet [leafletOptions]="options"
+                                    (leafletMapReady)="onMapReady($event)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card col">
+                            <div class="card-titlt-txt">Browser Usage</div>
+                            <div class="card-body">
+                                <div [chart]="pie"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="card col-8">
+                            <div class="card-titlt-txt">Latest Projects</div>
+                            <div class="table-height">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>User Id</th>
+                                            <th>Title</th>
+                                            <th>completed</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let data of tableData">
+                                            <td>{{data.id}}</td>
+                                            <td>{{data.userId}}</td>
+                                            <td>{{data.title}}</td>
+                                            <td>{{data.completed}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card col">
+                            <div class="card-titlt-txt">Monthly Sales</div>
+                            <div>
+                                <div [chart]="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
