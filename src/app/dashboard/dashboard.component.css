@@ -134,9 +134,10 @@ body {
     margin: 20px;
     /* transform: scale(1.06); */
     box-shadow: 0 10px 20px 0 rgba(9,9,16,.15);
+    border: none;
 }
 .card-titlt-txt{
-    padding: 5px;
+    padding: 10px;
     font-size: 14px;
     font-weight: 600;
 }
@@ -178,4 +179,8 @@ body {
 .table-height{
   max-height: 385px;
   overflow: auto;
+}
+.title-div{
+  padding: 5px;
+    border-bottom: 1px solid #bfbdbd;
 }

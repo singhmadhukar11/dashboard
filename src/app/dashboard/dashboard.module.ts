@@ -7,7 +7,7 @@ import { ChartModule } from 'angular-highcharts';
 // import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet'
 import { HttpClientModule } from '@angular/common/http';
-
+import {FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -16,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardRoutingModule,
     ChartModule,
     LeafletModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }

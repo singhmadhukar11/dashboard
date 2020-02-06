@@ -11,19 +11,19 @@ import { DashboardService } from './dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-    constructor(private router: Router, private dashboardService : DashboardService) { }
+    constructor(private router: Router, private dashboardService: DashboardService) { }
 
     tableData;
 
-getDataFromService(){
-    this.dashboardService.getTableData().subscribe(
-        res => 
-        {
+    getDataFromService() {
+        this.dashboardService.getTableData().subscribe(
+            res => {
                 this.tableData = res;
                 console.log(res);
-        }
-      )
-}
+            }
+        )
+    };
+    
     dashboardMenus = [{
         name: 'Dashboard',
         icons: 'fa-chart-line'
@@ -130,16 +130,16 @@ getDataFromService(){
         },
         series: [{
             name: 'Browsers',
-            data: [["Firefox",6],["MSIE",4],["Chrome",7]],
+            data: [["Firefox", 6], ["MSIE", 4], ["Chrome", 7]],
             size: '70%',
             innerSize: '70%',
-            showInLegend:true,
+            showInLegend: true,
             dataLabels: {
                 enabled: false
             },
             type: undefined
         }]
-        
+
     });
 
     bar = new Chart({
@@ -234,7 +234,7 @@ getDataFromService(){
         }
     };
 
-    ngOnInit() { 
+    ngOnInit() {
         this.getDataFromService();
     }
 
