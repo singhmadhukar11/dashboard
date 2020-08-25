@@ -23,7 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "^5.2.1",
     "angular-highcharts": "^8.0.3",
     "angular2-highcharts": "^0.5.5",
-    "highcharts": "^8.0.0",
+    "highcharts": "^8.1.1",
     "leaflet": "^1.6.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
